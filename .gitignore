@@ -1,0 +1,7 @@
+*.xlsx
+*.xlsx#
+bin/
+share/
+lib/
+include/
+lib64
