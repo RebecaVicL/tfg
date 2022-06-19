@@ -17,40 +17,31 @@ except Exception as e:
     sys.exit(0)
  
 def excel2mysql():
-    try:
-        try:
-            # x1 = pd.read_excel(path, sheet_name = "Datos", header=11)
-            # x1 = pd.read_excel(path, sheet_name = "Datos", index_col=22, nrows=2, usecols="A,C,E:F")
-            # x1 = pd.read_excel(path, sheet_name = "Datos", usecols="W:BN", skiprows=2, nrows=6, converters={ "NaN": 0})
-            x1 = pd.read_excel(path, sheet_name = "Datos", usecols="W:BN", skiprows=2, nrows=6, header=0, index_col=0)
-            
-            x1 = x1.fillna(0)
-            print(x1)
-            x1 = x1.transpose()
-            #print(x1.keys())
-            # print(x1.items)
-            print(list(x1)[0].replace(" ","_"))
-            print(x1)
-            for i in range(5):
-                  list(x1)[i] = list(x1)[i].replace(" ","_")
-                  print(list(x1)[i])
-            #     x1[i][22] = x1[i][22].replace(" ","_")
-            print(x1)
+    x1 = pd.read_excel(path, sheet_name = "Datos", usecols="W:BN", skiprows=2, nrows=6, header=None, index_col=0)
+    
+    x1 = x1.fillna(0)
+    print(x1.keys())
+    print(x1)
+    print(x1.columns.values)
+    # print(x1.iloc[0][22])
+    print("TRASPUESTAAAA!!!! CORREEE REBECAAA!")
+    x1 = x1.transpose()
+    print(x1.keys())
+    print(x1)
+    print(x1.columns.values)
+    print(x1.iloc[0][1])
+    print(x1.shape)
+    #x1 = df.parse(solapa)
+    print(x1.shape[1])
+    for i in range(x1.shape[1]):
+        x1.columns.values[i] = x1.columns.values[i].replace(" ", "_")
 
 
-            #x1 = df.parse(solapa)
-            engine = create_engine(url , echo = False, encoding='utf-8')
-            with engine.connect() as conn, conn.begin():
-                x1.to_sql(tabla, conn, if_exists='replace')
-            print ("Migración terminada!")
+    engine = create_engine(url , echo = False, encoding='utf-8')
+    with engine.connect() as conn, conn.begin():
+        x1.to_sql(tabla, conn, if_exists='replace')
+    print ("Migración terminada!")
  
-        except Exception as f:
-            print('Imposible conectar con Base de datos!! Revise datos de conexión!!' )
-            print(f)
- 
-    except Exception as e:
-        print('ERROR!! Imposible abrir fichero')
-        print(e)
  
 if __name__ == '__main__':
     excel2mysql()
