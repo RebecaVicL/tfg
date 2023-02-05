@@ -1,13 +1,13 @@
 path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
-solapa = "Datos"
 tabla = "GrupoE_fechas"
-url = 'mysql+pymysql://excel_user:patata@127.0.0.1/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
+url = 'mysql+pymysql://root:patata@127.0.0.1/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
  
 try:
     import sys
     import pandas as pd
     from sqlalchemy import create_engine 
+    from sqlalchemy_utils import database_exists, create_database
  
 except Exception as e:
     print(" *** ERROR FATAL *** Error inicial al cargar librerias!! ")
@@ -39,6 +39,8 @@ def excel2mysql():
     x4["Fecha"] =  pd.to_datetime(x4["Fecha"], format="%Y-%m-%d")
 
     engine = create_engine(url , echo = False, encoding='utf-8')
+    if not database_exists(engine.url):
+        create_database(engine.url)
     with engine.connect() as conn, conn.begin():
         x4.to_sql(tabla, conn, if_exists='replace')
     print ("Migración terminada!")

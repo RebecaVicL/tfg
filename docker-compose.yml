@@ -1,0 +1,25 @@
+version: "3.2"
+services:
+  mariadb:
+    image: "mariadb:10.3.37"
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=patata
+
+  grafana:
+    image: grafana/grafana:6.5.1
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_BASIC_ENABLED=false
+      - GRAFANA_MYSQL_PASSWORD=patata
+    volumes:
+      - ./grafana:/etc/grafana/provisioning/
+
+
+
