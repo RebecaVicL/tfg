@@ -1,8 +1,6 @@
-path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
-#path = "./EC_2021_GrupoA.xlsx"
+path = "./EC_2021_GrupoC_PI.xlsx"
 solapa = "Datos"
-tabla = "GrupoE_parte1"
-#tabla = "GrupoA"
+tabla = "GrupoC"
 url = 'mysql+pymysql://excel_user:patata@127.0.0.1/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
  
@@ -17,7 +15,7 @@ except Exception as e:
     sys.exit(0)
  
 def excel2mysql():
-    x1 = pd.read_excel(path, sheet_name = "Datos", usecols="S,X:AY,BL:BN", skiprows=11, nrows=12, header=0, index_col=None)
+    x1 = pd.read_excel(path, sheet_name = "Datos", usecols="S,W:BN", skiprows=11, nrows=51, header=0, index_col=None)
     #ID = pd.read_excel(path, sheet_name = "Datos", usecols="S", skiprows=11, header=0, index_col=0)
 
 

@@ -1,6 +1,6 @@
 path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
 solapa = "Datos"
-tabla = "GrupoE_Fechas"
+tabla = "GrupoE_prueba"
 url = 'mysql+pymysql://excel_user:patata@127.0.0.1/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
  
@@ -24,6 +24,7 @@ def excel2mysql():
             with engine.connect() as conn, conn.begin():
                 x1.to_sql(tabla, conn, if_exists='replace')
             print ("Migración terminada!")
+            print(x1)
  
         except Exception as f:
             print('Imposible conectar con Base de datos!! Revise datos de conexión!!' )
