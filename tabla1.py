@@ -1,22 +1,28 @@
-path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
-#path = "./EC_2021_GrupoA.xlsx"
+#path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
 tabla = "GrupoE"
 #tabla = "GrupoA"
 url = 'mysql+pymysql://root:patata@127.0.0.1/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
+import os
+import sys
+import pandas as pd
+from sqlalchemy import create_engine 
+from sqlalchemy_utils import database_exists, create_database
  
-try:
-    import sys
-    import pandas as pd
-    from sqlalchemy import create_engine 
-    from sqlalchemy_utils import database_exists, create_database
- 
-except Exception as e:
-    print(" *** ERROR FATAL *** Error inicial al cargar librerias!! ")
-    print(e)
-    sys.exit(0)
- 
+def selfichero():
+    ficheros_dir = './'
+    with os.scandir(ficheros_dir) as ficheros:
+        ficheros = [fichero.name for fichero in ficheros if fichero.is_file() and fichero.name.endswith('.xlsx')]
+    print("Estos son los ficheros que hay en esta carpeta:")
+    for n in ficheros:
+        print(f"[{ficheros.index(n)}]" + n)     
+    excel_seleccionado=ficheros[int(input("-Selecciona el fichero que quieres analizar-->"))]
+    print("./" + excel_seleccionado)
+    return "./" + excel_seleccionado
+
+
 def excel2mysql():
+    path = selfichero()
     x1 = pd.read_excel(path, sheet_name = "Datos", usecols="S,X:AY,BL:BN", skiprows=11, nrows=12, header=0, index_col=None)
     #ID = pd.read_excel(path, sheet_name = "Datos", usecols="S", skiprows=11, header=0, index_col=0)
 
