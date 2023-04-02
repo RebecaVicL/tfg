@@ -1,7 +1,9 @@
 *.xlsx
 *.xlsx#
+venv/
 bin/
 share/
 lib/
 include/
 lib64
+__pycache__/
