@@ -6,7 +6,7 @@ import os
 from wtforms.validators import InputRequired
 from tabla1 import excel2mysql
 
-app = Flask(__name__)
+app = Flask(__name__,  static_folder='static')
 app.config['SECRET_KEY'] = 'supersecretkey'
 app.config['UPLOAD_FOLDER'] = '/tmp'
 

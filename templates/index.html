@@ -4,82 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" type="text/css">
     <title>Home</title>
-
-    <style>
-        :root {
-            --uah-blue: #005EB8;
-            --uah-blue-light: #5D97D6;
-        }
-
-        body {
-            background-color: white;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: var(--uah-blue);
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        header img {
-            height: 50px;
-            margin-right: 10px;
-            margin: auto;
-        }
-
-        h1 {
-            color: var(--uah-blue);
-            text-align: center;
-        }
-
-        form {
-            margin: 0 auto;
-            max-width: 500px;
-            padding: 20px;
-            border: 2px solid var(--uah-blue-light);
-            border-radius: 10px;
-        }
-
-        label {
-            color: var(--uah-blue);
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="file"] {
-            border: none;
-            background-color: var(--uah-blue-light);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        input[type="submit"] {
-            border: none;
-            background-color: var(--uah-blue);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        input[type="submit"]:hover {
-            background-color: var(--uah-blue-light);
-        }
-    </style>
 </head>
 <body>
     <header>
-        <img src="./img.png" alt="Universidad de Alcalá de Henares">
+        <img src="{{ url_for('static', filename='images/uah.png') }}" alt="Universidad de Alcalá de Henares">
         <h1>Flask File Uploads Tutorial</h1>
     </header>
 
