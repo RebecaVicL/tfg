@@ -1,6 +1,6 @@
 path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
 tabla = "GrupoE_fechas"
-url = 'mysql+pymysql://root:patata@127.0.0.1/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
+url = 'mysql+pymysql://root:patata@mariadb/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
  
 try:

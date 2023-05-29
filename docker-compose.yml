@@ -1,5 +1,16 @@
+#Este docker tiene 3 servicios, el de la web, mariadb y grafana.
+#El docker-compose en general esta compuesto por 3 partes. servicios, la imagen del servicio y los puertos asociados a cada servicios.
+#la web es distinto, la web no tiene imagen, estoy diciendo que no use la imagen remota(docker hub) si no que me la crees usando un dockerfile(Archivo explicado alli) 
+#se han puesto variables de entorno para configurar los servicios, en la bbdd se ha puesto la contraseña para que en el usuario root la contraseña es patata.
+#
 version: "3.2"
 services:
+  web:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 80:5000
   mariadb:
     image: "mariadb:10.3.37"
     restart: unless-stopped
@@ -9,9 +20,9 @@ services:
       - MARIADB_ROOT_PASSWORD=patata
 
   grafana:
-    image: grafana/grafana:6.5.1
+    image: grafana/grafana:6.5.1   #Lo que hace es descargar la imagen de grafana en dockerhub(por defecto) es una version fija, en este caso 6.5.1
     ports:
-      - 3000:3000
+      - 3000:3000 #Todo lo que vaya al puerto 3000 de mi PC van al puerto 3000 que es el de Grafana
     restart: unless-stopped
     environment:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
