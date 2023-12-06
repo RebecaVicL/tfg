@@ -17,9 +17,14 @@ header {
     align-items: center;
 }
 
-header img {
+.logo-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.logo-container img {
     height: 50px;
-    margin-right: 10px;
     margin: auto;
 }
 
@@ -66,3 +71,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: var(--uah-blue-light);
 }
+

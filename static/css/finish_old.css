@@ -1,0 +1,72 @@
+:root {
+    --uah-blue: #005EB8;
+    --uah-blue-light: #5D97D6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: white;
+    padding-top: 100px; /* Ajusta el espacio superior según sea necesario */
+}
+
+.header {
+    background-color: var(--uah-blue);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    color: var(--uah-blue);
+    text-align: center;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.button {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    margin: 1rem;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    background-color: var(--uah-blue); /* color de fondo original */
+    color: white;
+}
+
+.button:hover {
+    background-color: var(--uah-blue-light); /* color de fondo al pasar el cursor */
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.3);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:hover,
+.button:focus {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.content {
+    background-image: url(../images/uah.png); /* Ruta a la imagen */
+    background-position: center;
+    background-size: cover;
+    height: 200px; /* Ajusta la altura según sea necesario */
+}
+

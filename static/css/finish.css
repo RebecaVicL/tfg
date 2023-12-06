@@ -1,94 +1,80 @@
+:root {
+  --uah-blue: #005EB8;
+  --uah-blue-light: #5D97D6;
+}
+
 body {
-  background-color: #FED9C9;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.container {
+  background-color: white;
+  padding-top: 100px; /* Ajusta el espacio superior según sea necesario */
+}
+
+.logo-container {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.logo-container img {
+  height: 50px;
+  margin: auto;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+header {
+  background-color: var(--uah-blue);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
 }
 
 h1 {
-  font-size: 5rem;
-  color: #673AB7;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  color: var(--uah-blue);
+  text-align: center;
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
 }
 
-button {
+.button {
   display: inline-block;
   padding: 1.5rem 3rem;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  border-radius: 50px;
-  border: none;
+  border-radius: 5px;
+  border: 2px solid var(--uah-blue);
   margin: 1rem;
   cursor: pointer;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
-  background-color: #4CAF50; /* color de fondo original */
+  background-color: var(--uah-blue);
+  color: white;
 }
 
-button:hover {
-  background-color: #5D97D6; /* color de fondo al pasar el cursor */
-  color: white;
+.button:hover {
+  background-color: var(--uah-blue-light);
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.3);
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button:hover,
-button:focus {
+.button:hover,
+.button:focus {
   cursor: pointer;
   cursor: hand;
 }
-
-
-p {
-  font-size: 1.5rem;
-  color: #4CAF50;
-  margin-bottom: 2rem;
-}
-
-.confetti {
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  right: -20%;
-  bottom: -20%;
-  z-index: -1;
-  background-image: radial-gradient(circle, #9C27B0 15%, transparent 16%);
-  background-size: 10px 10px;
-  animation: confetti 10s linear infinite;
-}
-
-@keyframes confetti {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.confetti::before,
-.confetti::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 20px;
-  border-radius: 2px;
-  background-color: #9C27B0;
-  box-shadow: 
-    0 5px #9C27B0,
-    0 10px #9C27B0,
-    0 15px #9C27B0;
-}
-
-.confetti::before {
-  left: 20%;
-  animation: confettiBefore 10;
-}
-
-
 

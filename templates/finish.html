@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Migración terminada</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/finish.css') }}" type="text/css">
-  </head>
-  <body>
-    <h1>Migración terminada</h1>
-    <p>¡Felicidades el proceso se ha completado con éxito!</p>
-    <div class="confetti"></div>
-    <button class="button">Página principal</button>
-    <button class="button">Abrir Grafana</button>
-  </body>
-</html>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Migración terminada</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/finish.css') }}" type="text/css">
+ </head>
+ <body>
+  <header>
+    <div class="logo-container">
+      <img src="{{ url_for('static', filename='images/uah.png') }}" alt="Universidad de Alcalá de Henares">
+    </div>
+  </header>
+  <h1>Migración Terminada </h1>
+  <div class="button-container">
+    <a href="/"> <button class="button">Página principal</button> </a>
+    <a href="http://localhost:3000/login" target="_blank"><button class="button">Abrir Grafana</button> </a>
+  </div>
+ </body>
 
+</html> 

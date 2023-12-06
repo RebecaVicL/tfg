@@ -9,10 +9,11 @@
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='images/uah.png') }}" alt="Universidad de Alcalá de Henares">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/uah.png') }}" alt="Universidad de Alcalá de Henares">
+        </div>
         <h1>Flask File Uploads Tutorial</h1>
     </header>
-
     <form method='POST' enctype='multipart/form-data'>
         {{form.hidden_tag()}}
         <label for="file">Elige un archivo excel para subir:</label>
