@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 6,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -23,17 +23,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 0,
         "y": 0
       },
       "hiddenSeries": false,
-      "id": 4,
+      "id": 2,
       "legend": {
         "avg": false,
         "current": false,
@@ -43,7 +43,7 @@
         "total": false,
         "values": false
       },
-      "lines": false,
+      "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
@@ -61,138 +61,35 @@
         {
           "format": "time_series",
           "group": [],
-          "metricColumn": "Tipo_actividad",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  Fecha AS \"time\",\n  Tipo_actividad AS metric,\n  Stu_02\nFROM GrupoE_fechas\nORDER BY Fecha",
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_01' AS \"student\",\n    SUM(Stu_01 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\"\nUNION\nSELECT\n    Fecha AS \"time\",\n    'Stu_02' AS \"student\",\n    SUM(Stu_02 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\"\n-- Repeat the pattern for other students\nUNION\nSELECT\n    Fecha AS \"time\",\n    'Stu_10' AS \"student\",\n    SUM(Stu_10 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\n\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";",
           "refId": "A",
           "select": [
             [
               {
                 "params": [
-                  "Stu_02"
+                  "value"
                 ],
                 "type": "column"
               }
             ]
           ],
-          "table": "GrupoE_fechas",
-          "timeColumn": "Fecha",
-          "timeColumnType": "datetime",
-          "where": []
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Stu_02",
-      "tooltip": {
-        "shared": false,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": true,
-      "cacheTimeout": null,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "GrupoE",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 12,
-        "w": 24,
-        "x": 0,
-        "y": 8
-      },
-      "hiddenSeries": false,
-      "id": 2,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": false,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pluginVersion": "6.5.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "Nombre_actividad",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  Fecha AS \"time\",\n  Nombre_actividad AS metric,\n  Stu_01\nFROM GrupoE_fechas\nORDER BY Fecha",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "Stu_01"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "GrupoE_fechas",
-          "timeColumn": "Fecha",
-          "timeColumnType": "datetime",
-          "where": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Stu_01",
+      "title": "Panel Title",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -238,8 +135,8 @@
     "list": []
   },
   "time": {
-    "from": "2021-02-05T23:40:00.022Z",
-    "to": "2022-07-06T21:23:52.368Z"
+    "from": "2020-12-31T23:00:00.000Z",
+    "to": "2021-06-01T21:59:59.000Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -256,7 +153,7 @@
     ]
   },
   "timezone": "",
-  "title": "Fechas",
-  "uid": "nZ9wQzgVz",
-  "version": 4
+  "title": "Fecha",
+  "uid": "wQoiAo2Sz",
+  "version": 1
 }

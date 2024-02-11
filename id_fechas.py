@@ -1,6 +1,6 @@
-path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
-tabla = "GrupoE_fechas"
-url = 'mysql+pymysql://root:patata@mariadb/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
+# path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
+# tabla = "GrupoE_fechas"
+url = 'mysql+pymysql://root:patata@mariadb/Asignatura' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
  
 try:
@@ -14,7 +14,9 @@ except Exception as e:
     print(e)
     sys.exit(0)
  
-def excel2mysql():
+def load_fechas(file):
+    path = file
+    tabla = "Fecha"
     x1 = pd.read_excel(path, sheet_name = "Datos", usecols="W:BN", skiprows=2, nrows=6, header=None, index_col=0)
 
     x2 = pd.read_excel(path, sheet_name = "Datos", usecols="W:BN", skiprows=11, nrows=1, header=None, index_col=0)
@@ -22,7 +24,6 @@ def excel2mysql():
     x3 = pd.read_excel(path, sheet_name = "Datos", usecols="S,X:BN", skiprows=12, nrows=11, header=None, index_col=0)
 
     x1 = x1.fillna(0)
-    #x2 = x2.fillna(0)
     x3 = x3.fillna(0)
     x1 = x1.transpose()
     x2 = x2.transpose()
@@ -44,9 +45,5 @@ def excel2mysql():
     with engine.connect() as conn, conn.begin():
         x4.to_sql(tabla, conn, if_exists='replace')
     print ("Migración terminada!")
- 
- 
-if __name__ == '__main__':
-    excel2mysql()
 
 #  https://www.manejandodatos.es/2019/04/migracion-de-excel-a-mysql/

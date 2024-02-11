@@ -20,7 +20,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "description": "",
       "gridPos": {
         "h": 8,
@@ -70,7 +70,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Lab_total_ordinaria as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Lab_total_ordinaria as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -82,7 +82,7 @@
               }
             ]
           ],
-          "table": "GrupoE",
+          "table": "Clase",
           "timeColumn": "Estudio_previo",
           "timeColumnType": "double",
           "where": [
@@ -100,7 +100,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -195,7 +195,7 @@
           "group": [],
           "metricColumn": "id_anonimizado",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Socratives as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Socratives as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -207,7 +207,7 @@
               }
             ]
           ],
-          "table": "GrupoE",
+          "table": "Clase",
           "timeColumn": "lab total ordinaria",
           "timeColumnType": "double",
           "where": []
@@ -220,7 +220,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "description": "",
       "gridPos": {
         "h": 10,
@@ -283,7 +283,7 @@
           "hide": false,
           "metricColumn": "category",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  T0+T1+T2 as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  T0+T1+T2 as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -318,7 +318,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -417,7 +417,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  pei as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  pei as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -510,7 +510,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -605,7 +605,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Nota_final_ordinaria as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Nota_final_ordinaria as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -640,7 +640,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -737,7 +737,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Nota_final as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Nota_final as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -773,7 +773,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "gridPos": {
         "h": 5,
         "w": 24,
@@ -832,7 +832,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Total_sesiones_Trabajadas as value\nFROM EC.GrupoE\nORDER BY Student_ID\n",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Total_sesiones_Trabajadas as value\nFROM Asignatura.Clase\nORDER BY Student_ID\n",
           "refId": "A",
           "select": [
             [
@@ -926,7 +926,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "description": "Numero de veces en el que el individuo a asistido a clase, hemos puesto como maximo 22 porque es el numero maximo de clases que se han impartido",
       "gridPos": {
         "h": 9,
@@ -984,7 +984,7 @@
           "hide": false,
           "metricColumn": "category",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Total_sesiones as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Total_sesiones as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -1019,7 +1019,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "gridPos": {
         "h": 6,
         "w": 24,
@@ -1073,7 +1073,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Total_minutos as value\nFROM EC.GrupoE\nORDER BY Student_ID",
+          "rawSql": "SELECT\n  NOW() as time_sec,\n  Student_ID as metric,\n  Total_minutos as value\nFROM Asignatura.Clase\nORDER BY Student_ID",
           "refId": "A",
           "select": [
             [
@@ -1103,7 +1103,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1231,7 +1231,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "decimals": 2,
       "fieldConfig": {
         "defaults": {
@@ -2697,7 +2697,7 @@
       ]
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2820,7 +2820,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2943,7 +2943,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -3066,7 +3066,7 @@
       "type": "gauge"
     },
     {
-      "datasource": "GrupoE",
+      "datasource": "Clase",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -3207,7 +3207,7 @@
     ]
   },
   "timezone": "",
-  "title": "Grupo_E",
+  "title": "Clase",
   "uid": "C1IHfnvMk",
   "version": 26
 }

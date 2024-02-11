@@ -1,7 +1,7 @@
 #path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
-tabla = "GrupoE"
-#tabla = "GrupoA"
-url = 'mysql+pymysql://root:patata@mariadb/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
+# tabla = "GrupoE"
+# tabla = "GrupoA"
+url = 'mysql+pymysql://root:patata@mariadb/Asignatura' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
 import os
 import sys
@@ -12,6 +12,7 @@ from flask import Flask, render_template
 
 def excel2mysql(file):
     path = file
+    tabla = "Clase"
     x1 = pd.read_excel(path, sheet_name = "Datos", usecols="S,X:AY,BL:BN", skiprows=11, nrows=12, header=0, index_col=None)
 
     x1 = x1.fillna(0)

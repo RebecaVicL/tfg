@@ -1,7 +1,7 @@
 path = "./EC_2021_GrupoA.xlsx"
 solapa = "Datos"
 tabla = "GrupoA"
-url = 'mysql+pymysql://root:patata@mariadb/EC' #credenciales(excel_user), contraseña(patata) y host(localhost)
+url = 'mysql+pymysql://root:patata@mariadb/Asignatura' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
  
 try:

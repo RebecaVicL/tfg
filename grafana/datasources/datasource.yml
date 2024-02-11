@@ -1,10 +1,10 @@
 apiVersion: 1
 
 datasources:
-  - name: GrupoE
+  - name: Clase
     type: mysql
     url: mariadb:3306
-    database: EC
+    database: Asignatura
     user: root
     orgId: 1
     jsonData:

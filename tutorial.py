@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 import os
 from wtforms.validators import InputRequired
 from tabla1 import excel2mysql
+from id_fechas import load_fechas
 
 app = Flask(__name__,  static_folder='static')
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -21,6 +22,7 @@ def home():
     if form.validate_on_submit():
         file = form.file.data # First grab the file
         file.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
+        load_fechas(file)
         return excel2mysql(file)
     return render_template('index.html', form=form)
 
