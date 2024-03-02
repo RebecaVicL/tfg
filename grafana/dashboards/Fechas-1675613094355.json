@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "panels": [
     {
@@ -27,10 +26,370 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
-        "w": 12,
+        "h": 12,
+        "w": 24,
         "x": 0,
         "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 5,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_01' AS \"student\",\n    SUM(Stu_01 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_02' AS \"student\",\n    SUM(Stu_02 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";",
+          "refId": "B",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_03' AS \"student\",\n    SUM(Stu_03 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";",
+          "refId": "C",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_04' AS \"student\",\n    SUM(Stu_04 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";",
+          "refId": "D",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_05' AS \"student\",\n    SUM(Stu_05 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";\n",
+          "refId": "E",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_06' AS \"student\",\n    SUM(Stu_06 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";\n",
+          "refId": "F",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_07' AS \"student\",\n    SUM(Stu_07 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";\n",
+          "refId": "G",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_08' AS \"student\",\n    SUM(Stu_08 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";\n",
+          "refId": "H",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_09' AS \"student\",\n    SUM(Stu_09 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";\n",
+          "refId": "I",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_10' AS \"student\",\n    SUM(Stu_10 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"EJC\";",
+          "refId": "J",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Sumatorios Test",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Clase",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 12
       },
       "hiddenSeries": false,
       "id": 2,
@@ -63,7 +422,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_01' AS \"student\",\n    SUM(Stu_01 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\"\nUNION\nSELECT\n    Fecha AS \"time\",\n    'Stu_02' AS \"student\",\n    SUM(Stu_02 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\"\n-- Repeat the pattern for other students\nUNION\nSELECT\n    Fecha AS \"time\",\n    'Stu_10' AS \"student\",\n    SUM(Stu_10 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\n\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";",
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_01' AS \"student\",\n    SUM(Stu_01 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";",
           "refId": "A",
           "select": [
             [
@@ -83,13 +442,989 @@
               "type": "macro"
             }
           ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_02' AS \"student\",\n    SUM(Stu_02 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";",
+          "refId": "B",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_03' AS \"student\",\n    SUM(Stu_03 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";",
+          "refId": "C",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_04' AS \"student\",\n    SUM(Stu_04 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";",
+          "refId": "D",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_05' AS \"student\",\n    SUM(Stu_05 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";\n",
+          "refId": "E",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_06' AS \"student\",\n    SUM(Stu_06 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";\n",
+          "refId": "F",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_07' AS \"student\",\n    SUM(Stu_07 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";\n",
+          "refId": "G",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_08' AS \"student\",\n    SUM(Stu_08 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";\n",
+          "refId": "H",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_09' AS \"student\",\n    SUM(Stu_09 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";\n",
+          "refId": "I",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_10' AS \"student\",\n    SUM(Stu_10 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE Tipo_actividad = \"TST\";",
+          "refId": "J",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Sumatorios Socratives",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Clase",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_01' AS \"student\",\n    SUM(Stu_01 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_02' AS \"student\",\n    SUM(Stu_02 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "B",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_03' AS \"student\",\n    SUM(Stu_03 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "C",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_04' AS \"student\",\n    SUM(Stu_04 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "D",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_05' AS \"student\",\n    SUM(Stu_05 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "E",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_06' AS \"student\",\n    SUM(Stu_06 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "F",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_07' AS \"student\",\n    SUM(Stu_07 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "G",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_08' AS \"student\",\n    SUM(Stu_08 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "H",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_09' AS \"student\",\n    SUM(Stu_09 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "I",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_10' AS \"student\",\n    SUM(Stu_10 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"16\", \"17\", \"20\", \"24\");",
+          "refId": "J",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Sumatorio Notas Ordinarias",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Clase",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 24
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_01' AS \"student\",\n    SUM(Stu_01 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_02' AS \"student\",\n    SUM(Stu_02 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "B",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_03' AS \"student\",\n    SUM(Stu_03 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "C",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_04' AS \"student\",\n    SUM(Stu_04 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "D",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_05' AS \"student\",\n    SUM(Stu_05 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "E",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_06' AS \"student\",\n    SUM(Stu_06 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "F",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_07' AS \"student\",\n    SUM(Stu_07 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "G",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_08' AS \"student\",\n    SUM(Stu_08 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "H",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_09' AS \"student\",\n    SUM(Stu_09 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "I",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT\n    Fecha AS \"time\",\n    'Stu_10' AS \"student\",\n    SUM(Stu_10 * `Peso_en_calif_final_(%)`) OVER (ORDER BY Fecha) AS \"cumulative_weighted_score\"\nFROM\n    Fecha\nWHERE\n    Columna_para_indicar_dependencia IN (\"25\", \"26\", \"27\");",
+          "refId": "J",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "Fecha",
+          "timeColumn": "index",
+          "timeColumnType": "timestamp",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Sumatorio Notas Extraordinarias",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -136,7 +1471,7 @@
   },
   "time": {
     "from": "2020-12-31T23:00:00.000Z",
-    "to": "2021-06-01T21:59:59.000Z"
+    "to": "2021-07-15T21:59:59.000Z"
   },
   "timepicker": {
     "refresh_intervals": [
