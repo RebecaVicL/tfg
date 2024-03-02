@@ -1,6 +1,3 @@
-#path =  "./20220305-DatosNormalizados-AsignaturaElectronicaCircuitos-Curso2021-GrupoE.xlsx"
-# tabla = "GrupoE"
-# tabla = "GrupoA"
 url = 'mysql+pymysql://root:patata@mariadb/Asignatura' #credenciales(excel_user), contraseña(patata) y host(localhost)
 
 import os
@@ -24,7 +21,6 @@ def excel2mysql(file):
         create_database(engine.url)
     with engine.connect() as conn, conn.begin():
         x1.to_sql(tabla, conn, if_exists='replace')
-    print ("Migración terminada!")
     return render_template('finish.html')
  
 if __name__ == '__main__':
