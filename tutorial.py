@@ -4,7 +4,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
 from wtforms.validators import InputRequired
-from tabla1 import excel2mysql
+from id_clase import excel2mysql
 from id_fechas import load_fechas
 
 app = Flask(__name__,  static_folder='static')
